@@ -1,0 +1,19 @@
+export TxtBlack='\e[0;30m' # Black - Regular
+export TxtRed='\e[0;31m' # Red
+export TxtGreen='\e[0;32m' # Green
+export TxtYellow='\e[0;33m' # Yellow
+export TxtBlue='\e[0;34m' # Blue
+export TxtPurple='\e[0;35m' # Purple
+export TxtCyan='\e[0;36m' # Cyan
+export TxtWhite='\e[0;37m' # White
+
+export BldBlack='\e[1;30m' # Black - Bold
+export BldRed='\e[1;31m' # Red
+export BldGreen='\e[1;32m' # Green
+export BldYellow='\e[1;33m' # Yellow
+export BldBlue='\e[1;34m' # Blue
+export BldPurple='\e[1;35m' # Purple
+export BldCyan='\e[1;36m' # Cyan
+export BldWhite='\e[1;37m' # White
+
+export ColorOff='\e[0m'    # Text Reset

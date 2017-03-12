@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DIR="/home/alatrille/bash_workspace"
+
+source "$DIR"/colors
+source "$DIR"/git_functions
+source "$DIR"/ps1
