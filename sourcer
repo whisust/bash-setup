@@ -3,5 +3,6 @@
 DIR="/home/alatrille/bash_workspace"
 
 source "$DIR"/colors
+source "$DIR"/personalized_variables
 source "$DIR"/git_functions
 source "$DIR"/ps1
