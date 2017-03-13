@@ -1,3 +1,3 @@
 # Watermark, cyclone emojiii
-export W='\U+1F300'
-export WG=':cyclone:'
+export WU='\U+1F300'
+export W=':cyclone:'
