@@ -2,9 +2,9 @@ function parse_git_ps1 {
     if ! git rev-parse --git-dir > /dev/null 2>&1
         then echo "";
     else
-        status=$(git status --branch --porcelain | tr -d '\r\n' | sed -r 's/## (.+)[.]{3}([^ ]+)? ?(\[.+\])?( [A-Z] .+)*/\1\t\2\t\3\t\4/g')
+        status=$(git status --branch --porcelain | tr '\r\n' ' ' | sed -r 's/## ([^ .]+)([.]{3}([^ ]+))? (\[.+\])?( [A-Z?]{1,2} *[^ ]+ *)*/\1\t\3\t\4\t\5/g')
         branch=$(echo -e "$status" | cut -f 1)
-        #remote=$(echo -e "$status" | cut -f 2)
+        #remote=$(echo -e "$status" | cut -f 2) #unused for now
         commits=$(echo -e "$status" | cut -f 3)
         files=$(echo -e "$status" | cut -f 4)
         
