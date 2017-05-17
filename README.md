@@ -5,10 +5,10 @@ I like to do it with basics tools, as I think the most of them are enough to han
 
 <h1>Installation</h1>
 
-Clone the repo wherever you want, and add the command
+Clone the repo wherever you want, edit the `sourcer` file to set the `DIR` variable to the repository path and add the command
 
 ```shell
-source [whereveryouwant]/sourcer
+source [thebashsetuprepo]/sourcer
 ```
 
 inside your .bash_profile
