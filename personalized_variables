@@ -1,3 +1,10 @@
 # Watermark, cyclone emojiii
 export WU='\U1F300'
 export W=':cyclone:'
+
+export WS='/mnt/c/Users/antoine/workspace'
+
+ws() {
+    cd $WS
+}
+export -f ws
