@@ -17,22 +17,22 @@ export BldCyan='\e[1;36m' # Cyan
 export BldWhite='\e[1;37m' # White
 
 # Solarized Theme
-export SolarizedBase03='\e[0;234m'
-export SolarizedBase02='\e[0;235m'
-export SolarizedBase01='\e[0;240m'
-export SolarizedBase00='\e[0;241m'
-export SolarizedBase0='\e[0;244m'
-export SolarizedBase1='\e[0;245m'
-export SolarizedBase2='\e[0;254m'
-export SolarizedBase3='\e[0;230m'
-export SolarizedYellow='\e[0;136m'
-export SolarizedOrange='\e[0;166m'
-export SolarizedRed='\e[0;160m'
-export SolarizedMagenta='\e[0;125m'
-export SolarizedViolet='\e[0;61m'
-export SolarizedBlue='\e[0;33m'
-export SolarizedCyan='\e[0;37m'
-export SolarizedGreen='\e[0;64m'
+export SolarizedBase03='\e[0;30m'
+export SolarizedBase02='\e[1;30m'
+export SolarizedBase01='\e[0;32m'
+export SolarizedBase00='\e[0;33m'
+export SolarizedBase0='\e[0;34m'
+export SolarizedBase1='\e[0;36m'
+export SolarizedBase2='\e[0;37m'
+export SolarizedBase3='\e[1;37m'
+export SolarizedYellow='\e[1;33m'
+export SolarizedOrange='\e[0;31m'
+export SolarizedRed='\e[1;31m'
+export SolarizedMagenta='\e[1;35m'
+export SolarizedViolet='\e[0;35m'
+export SolarizedBlue='\e[1;34m'
+export SolarizedCyan='\e[1;36m'
+export SolarizedGreen='\e[1;32m'
 
 
 

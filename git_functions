@@ -11,19 +11,14 @@ function parse_git_ps1 {
         final_aggreg=""
 
         if [ -z "$files" ] ; then
-            if [ -z "$commits" ] ; then
-                final_aggreg="$BldGreen$branch$ColorOff"
-            else
-                final_aggreg="$BldYellow$branch$ColorOff $commits"
-            fi
+            final_aggreg="$SolarizedBlue$branch$ColorOff"
         else 
-            if [ -z "$commits" ] ; then
-                final_aggreg="$BldRed$branch *$ColorOff"
-            else
-                final_aggreg="$BldRed$branch *$ColorOff $commits"
-            fi
+            final_aggreg="$SolarizedRed$branch$ColorOff"
         fi
-        printf " ($final_aggreg)"
+        if [ -n "$commits" ] ; then
+            final_aggreg="$final_aggreg $commits"
+        fi
+        printf " ( $final_aggreg )"
     fi
 }
 

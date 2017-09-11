@@ -2,7 +2,7 @@
 export WU='\U1F300'
 export W=':cyclone:'
 
-export WS='/mnt/c/Users/antoine/workspace'
+export WS='/mnt/c/Users/alatr/workspace'
 
 ws() {
     cd $WS
