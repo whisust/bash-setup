@@ -1,10 +1,8 @@
-# Watermark, cyclone emojiii
-export WU='\U1F300'
-export W=':cyclone:'
-
 export WS='/mnt/c/Users/alatr/workspace'
 
 ws() {
     cd $WS
 }
 export -f ws
+
+alias slackpost=$(pwd)/'bin/slackpost.sh'
