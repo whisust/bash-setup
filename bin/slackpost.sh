@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Take a look at https://dhatim.slack.com/apps/new/A0F7XDUAZ-incoming-webhooks to have your webhook url
+
 
 usage() {
     cat >&2 <<EOF
