@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Take a look at https://dhatim.slack.com/apps/new/A0F7XDUAZ-incoming-webhooks to have your webhook url
+# Take a look at https://my.slack.com/apps/new/A0F7XDUAZ-incoming-webhooks to have your webhook url
 
 
 usage() {
