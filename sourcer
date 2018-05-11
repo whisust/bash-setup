@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="/home/alatrille/bash-setup"
+DIR=~/bash-setup
 
 source "$DIR"/colors
 source "$DIR"/personalized_variables

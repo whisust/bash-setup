@@ -2,23 +2,26 @@ function parse_git_ps1 {
     if ! git rev-parse --git-dir > /dev/null 2>&1
         then echo "";
     else
-        status=$(git status --branch --porcelain | tr '\r\n' ' ' | sed -r 's/## ([^ .]+)([.]{3}([^ ]+))? (\[.+\])?( [A-Z?]{1,2} *[^ ]+ *)*/\1\t\3\t\4\t\5/g')
-        branch=$(echo -e "$status" | cut -f 1)
-        #remote=$(echo -e "$status" | cut -f 2) #unused for now
-        commits=$(echo -e "$status" | cut -f 3)
-        files=$(echo -e "$status" | cut -f 4)
+        #status=$(git status --branch --porcelain | tr '\r\n' ' ' | sed -r 's/## ([^ .]+)([.]{3}([^ ]+))? (\[.+\])?( [A-Z?]{1,2} *[^ ]+ *)*/\1\t\3\t\4\t\5/g')
+        #branch=$(echo -e "$status" | cut -f 1)
+        ##remote=$(echo -e "$status" | cut -f 2) #unused for now
+        #commits=$(echo -e "$status" | cut -f 3)
+        #files=$(echo -e "$status" | cut -f 4)
         
-        final_aggreg=""
+        #final_aggreg=""
 
-        if [ -z "$files" ] ; then
-            final_aggreg="$SolarizedBlue$branch$ColorOff"
-        else 
-            final_aggreg="$SolarizedRed$branch$ColorOff"
-        fi
-        if [ -n "$commits" ] ; then
-            final_aggreg="$final_aggreg $commits"
-        fi
-        printf " ( $final_aggreg )"
+        #if [ -z "$files" ] ; then
+        #    final_aggreg="$SolarizedBlue$branch$ColorOff"
+        #else 
+        #    final_aggreg="$SolarizedRed$branch$ColorOff"
+        #fi
+        #if [ -n "$commits" ] ; then
+        #    final_aggreg="$final_aggreg $commits"
+        #fi
+        #printf " ( $final_aggreg )"
+	
+	res=$(git branch | grep \* | cut -d ' ' -f2)
+	printf " ( $res ) "
     fi
 }
 
