@@ -6,3 +6,5 @@ source "$DIR"/colors
 source "$DIR"/personalized_variables
 source "$DIR"/git_functions
 source "$DIR"/ps1
+source "$DIR"/aliases
+source "$DIR"/git-completion.bash

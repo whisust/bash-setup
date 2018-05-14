@@ -1,0 +1,9 @@
+alias ll='ls -al'
+
+
+function rebaseMaster {
+    curBranch=$(git branch | grep \* | cut -d ' ' -f 2)
+    git stash && git checkout master && git pull && git checkout $curBranch && git rebase master
+}
+
+export -f rebaseMaster
