@@ -32,6 +32,25 @@ fn_rm() {
     docker rm -f scylla scylla-node2 scylla-node3
 }
 
+usage() {
+    echo "Usage : scylla [command]
+        Helps automate some commands to run a test scylla cluster
+
+Commands:
+    start     start the cluster You must already have the scylladb/scylla docker image
+    
+    run       start the cluster for the first time of after a cleanup through rm
+
+    status    print the cluster status 
+
+    stop      stop the cluster
+
+    rm        remove the docker images of the cluster
+
+    sh        run cqlsh on the main node
+    " 
+}
+
 
 POSITIONAL=()
 while [[ $# -gt 0 ]] ; do
@@ -62,11 +81,14 @@ while [[ $# -gt 0 ]] ; do
         fn_rm
         exit $?
         ;;
+        help)
+        usage
+        exit 0
+        ;;
 	    *)    # unknown option
         echo "unknown option $1"
-	    POSITIONAL+=("$1") # save it in an array for later
-	    shift # past argument
+        usage
+	    exit 1
 	    ;;
 	esac
 done
-set -- "${POSITIONAL[@]}" # restore positional parameters
