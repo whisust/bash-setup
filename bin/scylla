@@ -1,0 +1,72 @@
+#!/bin/bash
+
+fn_run() {
+    echo "Starting cluster..."
+    docker run --name scylla -d -p 9042:9042 scylladb/scylla
+    docker run --name scylla-node2 -d scylladb/scylla --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' scylla)"
+    docker run --name scylla-node3 -d scylladb/scylla --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' scylla)"
+    echo "Cluster started, wait a bit"
+}
+
+fn_start() {
+    echo "Starting cluster..."
+    docker start scylla scylla-node2 scylla-node3
+    echo "Cluster started, wait a bit"
+}
+
+fn_status() {
+    docker exec -it scylla nodetool status
+}
+
+fn_stop() {
+    echo "Stopping nodes and core..."
+    docker stop scylla scylla-node2 scylla-node3
+    echo "Done, bye!"
+}
+
+fn_sh() {
+    docker exec -it scylla cqlsh
+}
+
+fn_rm() {
+    docker rm -f scylla scylla-node2 scylla-node3
+}
+
+
+POSITIONAL=()
+while [[ $# -gt 0 ]] ; do
+	key="$1"
+
+	case $key in
+	    start)
+	    fn_start
+	    exit $?
+	    ;;
+	    status)
+	    fn_status
+	    exit $?
+	    ;;
+	    stop)
+	    fn_stop
+	    exit $?
+	    ;;
+        run)
+        fn_run
+        exit $?
+        ;;
+        sh)
+        fn_sh
+        exit $?
+        ;;
+        rm)
+        fn_rm
+        exit $?
+        ;;
+	    *)    # unknown option
+        echo "unknown option $1"
+	    POSITIONAL+=("$1") # save it in an array for later
+	    shift # past argument
+	    ;;
+	esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
